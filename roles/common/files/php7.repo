@@ -1,0 +1,6 @@
+[php7]
+name=Extra Packages for PHP
+baseurl=https://dl.iuscommunity.org/pub/ius/stable/CentOS/7/x86_64/
+enabled=1
+gpgcheck=0
+

@@ -1,0 +1,15 @@
+---
+- name: Download Joomla
+  get_url: url=https://github.com/joomla/joomla-cms/releases/download/{{ jo_version }}/Joomla_{{ jo_version }}-Stable-Full_Package.tar.gz  dest=/home/{{ sys_user }}/pub_html/
+
+- name: Extract archive
+  command: tar -xvzf /home/{{ sys_user }}/pub_html/Joomla_{{ jo_version }}-Stable-Full_Package.tar.gz -C /home/{{ sys_user }}/pub_html/
+
+- name: Give Owner to the web root directory
+  command: chown -R apache:apache /home/{{ sys_user }}/pub_html/
+
+- name: Give permissions to the web root directory
+  command: chmod -R 775 /home/{{ sys_user }}/pub_html/
+
+- name: start apache service
+  service: name=httpd state=started enabled=yes

@@ -1,0 +1,18 @@
+---
+- name: Install php packages
+  yum: name={{ item }} state=present
+  with_items:
+    - php70u
+    - php70u-pdo
+    - php70u-mysqlnd
+    - php70u-opcache
+    - php70u-xml
+    - php70u-mcrypt
+    - php70u-gd
+    - php70u-devel
+    - php70u-intl
+    - php70u-mbstring
+    - php70u-bcmath
+    - php70u-json
+    - php70u-iconv
+    - wget
